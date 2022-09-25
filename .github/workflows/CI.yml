@@ -1,4 +1,6 @@
 name: CI
+env:
+  ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
 
 on:
   push:
@@ -9,6 +11,7 @@ on:
 jobs:
   run-ci:
     runs-on: ubuntu-latest
+    environment: main
     steps:
       - uses: actions/checkout@v2
         with:
